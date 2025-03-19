@@ -28,3 +28,18 @@ export const getAllUsers = async (req, res) => {
         res.status(500).json({ error: error });
     }
 }
+
+export const getSingleUser = async (req, res) => {
+    try {
+        const id = req.params.id;
+        const userExist = await User.findById(id);
+
+        if (!userExist) {
+            return res.status(404).json({ message: "Oops! User data not found!" })
+        }
+
+        res.status(200).json(userExist);
+    } catch (error) {
+        res.status(500).json({ error: error });
+    }
+}
