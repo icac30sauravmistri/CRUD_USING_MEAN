@@ -3,6 +3,7 @@ import mongoose from "mongoose";
 import bodyParser from "body-parser";
 import cors from "cors";
 import { DB_CONNECT, PORT } from "./config/index.js";
+import route from "./routes/user.js";
 
 const app = express();
 
@@ -15,3 +16,5 @@ mongoose.connect(DB_CONNECT).then(() => {
         console.log(`Server is running on ${PORT} port`);
     })
 }).catch(error => console.log(error));
+
+app.use("/api", route);
