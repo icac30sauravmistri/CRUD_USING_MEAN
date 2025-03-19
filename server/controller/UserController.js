@@ -1,8 +1,9 @@
 import User from "../models/User.js";
 
-export const create = async (requestAnimationFrame, res) => {
+export const create = async (req, res) => {
     try {
         const users = new User(req.body);
+
         if (!users) {
             return res.status(404).json({ message: "Oops! User data not found!" })
         }
