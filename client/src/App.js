@@ -1,6 +1,7 @@
 import './App.css';
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import User from './components/getuser/User';
+import Create from './components/createuser/Create';
 
 function App() {
 
@@ -11,7 +12,7 @@ function App() {
     },
     {
       path: "/users/create",
-      element: "User Create page",
+      element: <Create />,
     },
     {
       path: "/users/edit",
