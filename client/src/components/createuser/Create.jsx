@@ -19,7 +19,6 @@ const Create = () => {
   const inputHandler = (e) => {
     const { name, value } = e.target;
     setUser({ ...user, [name]: value });
-    // console.log(user);
   };
 
   const submitForm = async (e) => {
@@ -28,7 +27,6 @@ const Create = () => {
       .then((response) => {
         toast.success(response.data.message, { position: "top-right" })
         navigate("/users")
-        console.log(response);
       }).catch(error => console.log(error))
   }
   return (

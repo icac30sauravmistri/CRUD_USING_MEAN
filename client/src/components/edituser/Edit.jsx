@@ -19,7 +19,6 @@ const Edit = () => {
   const inputChangeHandler = (e) => {
     const { name, value } = e.target;
     setUser({ ...user, [name]: value });
-    console.log(user);
   }
 
   useEffect(() => {
@@ -38,7 +37,6 @@ const Edit = () => {
       .then((response) => {
         toast.success(response.data.message, { position: "top-right" })
         navigate("/users")
-        console.log(response);
       }).catch(error => console.log(error))
   }
 
