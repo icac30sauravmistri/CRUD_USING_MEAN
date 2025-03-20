@@ -9,7 +9,7 @@ export const create = async (req, res) => {
         }
 
         const saved_data = await users.save();
-        res.status(200).json(saved_data);
+        res.status(200).json({message:"user created successfully!"});
     } catch (error) {
         res.status(500).json({ error: error });
     }
